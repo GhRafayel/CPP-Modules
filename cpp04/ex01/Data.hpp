@@ -1,0 +1,27 @@
+#ifndef DATA_HPP
+#define DATA_HPP
+
+#include <iostream>
+
+enum
+{
+	Destructor = 1,
+	D_Constructor = 2,
+	P_Constructor = 3,
+	C_Constructor = 4,
+	A_Operator = 5
+};
+
+#define BLACK   "\033[30m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+#define WHITE   "\033[37m"
+#define RESET   "\033[0m"
+#define BOLD    "\033[1m"
+#define UNDERLINE "\033[4m"
+
+#endif

@@ -1,0 +1,53 @@
+#include "A_Animal.hpp"
+
+A_Animal::~A_Animal()
+{
+	print(Destructor, WHITE);
+}
+
+A_Animal::A_Animal() : type("Animal")
+{
+	 print(D_Constructor, WHITE);
+}
+
+A_Animal::A_Animal(const A_Animal & obj)
+{
+    this->type = obj.type;
+    print(C_Constructor, WHITE);
+}
+
+A_Animal & A_Animal::operator = (const A_Animal & obj) 
+{
+    if (this != &obj) this->type = obj.type;
+    print(A_Operator, WHITE);
+	return *this;
+}
+
+std::string A_Animal::getType(void) const 
+{
+    return this->type;
+}
+
+void	A_Animal::print(const int type, const std::string & color) const
+{
+	std::cout << color << BOLD;
+	switch (type)
+	{
+		case Destructor:
+			std::cout << getType() << " destructor colled!\n";
+			break;
+		case D_Constructor:
+			std::cout << getType() << " default constructor colled!\n";
+			break;
+		case C_Constructor:
+			std::cout << getType() << " copy constructor colled!\n";
+			break;
+		case P_Constructor:
+			std::cout << getType() << " Parameterize constructor colled!\n";
+			break;
+		case A_Operator:
+			std::cout << getType() << " assignment operator colled!\n";
+			break;
+	}
+	std::cout << RESET;
+}
